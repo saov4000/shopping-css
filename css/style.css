@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top:0;
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    z-index: 10;
+}
+
+.logo span{
+    color:#c9a13b
+}
+
+.carousel-track{
+    display: flex;
+    width: 300%;
+    height: 100%;
+    animation: slide 8s infinite ease-in-out alternate;
+}
+
+.slide{
+    width: 33.333%;
+    flex-shrink: 0;
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel{
+    width: 98%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 32px;
+    aspect-ratio: 16/7;
+    box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.35);
+}
+
+@keyframes slide {
+    0%, 25% {transform: translateX(0);}
+    33.33%, 58.33% {transform: translateX(-33.333%);}
+    66.66%, 91.66% {transform: translateX(-66.666%);}
+    100% {transform: translateX(-66.666%);}
+}
+
+.carousel:hover .carousel-track{
+    animation-play-state: paused;
+}
+
+.carousel-section{
+    display: flex;
+    justify-content: center;
+}
+
+.cards{
+    width: 95%;
+    height: 200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+    gap: 2rem;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 4rem;
+    transition: transform 0.25s box-shadow 0.25s;
+}
+
+.card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 24px 26px -12px rgba(0, 0, 0, 0.15);
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background: #1e1e1e;
+    color:#b0b0b0;
+    border-top: 3px solid #c9a13b;
+}
+  
+
+
